@@ -30,7 +30,7 @@ state = {
     //after the API call is made we need to convert the response to JSON format
     const data = await api_call.json();
     if(city && country){
-      console.log(data);
+      //console.log(data);
       this.setState({
         temperature: data.main.temp,
         city: data.name,
@@ -56,20 +56,34 @@ state = {
       //returns jsx (js code that looks like html (this is when babel comes in))
       //using props to make function call
       <div>
-         <Titles />
-         <Form getWeather={this.getWeather}/>
-         <Weather
-           temperature={this.state.temperature}
-           city={this.state.city}
-           country={this.state.country}
-           humidity={this.state.humidity}
-           description={this.state.description}
-           error={this.state.error}
-          />
+         <div className="wrapper">
+           <div className="main">
+             <div className="container">
+               <div className="row">
+                <div className="col-xs-5 title-container">
+                  <Titles />
+                </div>
+                <div className="col-xs-7 form-container">
+                  <Form getWeather={this.getWeather}/>
+                  <Weather
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
+                 />
+                </div>
+               </div>
+             </div>
+           </div>
+         </div>
       </div>
       //jsx can only return 1 parent element so everything you want to return has to be in single div
     );
   }
 };
+
+
 //makes this component available for other files to import
   export default App;

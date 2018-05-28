@@ -1,14 +1,9 @@
 import React from "react";
 
-class Titles extends React.Component {
-  render () {
-    return (
-      <div>
-         <h1>Weather App</h1>
-         <p> This is a React JS app for returning information about the weather</p>
-      </div>
-    );
-  }
-};
-
+const Titles = () => (
+  <div>
+     <h1 className="title-container__title">Weather App</h1>
+     <h3 className="title-container__subtitle"> This is a React JS app for returning information about the weather in a given city</h3>
+  </div>
+);
 export default Titles;
